@@ -1,0 +1,124 @@
+body{
+    background: rgb(67, 76, 99);
+}
+/*Cloud:*/
+.cloud{
+    background-color:white;
+    position: absolute;
+    top: 25%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 100px;
+    border-radius: 50px;
+    z-index: 1;
+    margin: 120px 0;
+  }
+  .cloud:before{
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 150px;
+    width: 95px;
+    height: 95px;
+    background: white;
+    border-radius: 50%;
+  }
+  .cloud:after{
+    content: '';
+    position: absolute;
+    top: -55px;
+    left: 35px;
+    width: 140px;
+    height: 140px;
+    background: white;
+    border-radius: 50%;
+  }
+  /*Rain*/
+.rain{
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+  }
+  .raindrop{
+    position: absolute;
+    height:30px;
+    width:7px;
+    border-radius:40%;
+    background-color:#3879e0;
+  }
+  #rd1{
+    right: 55px;
+    top: 30px;
+    animation: rain-drop 1s linear infinite;
+  }
+  #rd2{
+    left: 55px;
+    top: 30px;
+    animation: rain-drop 0.85s linear infinite;
+  }
+  @keyframes rain-drop{
+    0%{
+      opacity: 1;
+    }
+    50%{
+      transform: translateY(50px);
+      opacity: 0.75;
+    }
+    100%{
+      opacity: 0;
+      transform: translateY(80px) rotateX(90deg);
+    }
+  }
+  /*Lightning*/
+.lightning{
+    position: absolute; 
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.bolt{
+    border-radius:0%;
+    z-index:0;
+    background-color: #ffd747;
+}
+#b1{
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    height: 45px;
+    width: 25px;
+    transform: rotate(20deg);
+    animation: b1 2s ease-in infinite alternate;
+}
+#b2{
+    position: absolute;
+    top: 30px;
+    left: -10px; 
+    width: 20px;
+    height: 40px;
+    transform: rotate(25deg) skewY(30deg);
+    animation: b2 2s ease-in infinite alternate;
+}
+@keyframes b1{
+    0%{
+        transform: rotate(20deg) scale(1);
+    }
+    50%{
+        transform: rotate(20deg) scale(1.3) ;
+    }
+    100%{
+    }
+}
+@keyframes b2{
+    0%{
+        transform: rotate(25deg) skewY(30deg) scale(1);
+    }
+    50%{
+        transform: rotate(25deg) skewY(30deg) scale(1.3) ;
+    }
+    100%{
+    }
+}
